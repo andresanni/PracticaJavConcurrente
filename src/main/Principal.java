@@ -1,19 +1,23 @@
 package main;
 
 public class Principal extends Thread {
-	private int id;
-	public static int cont = 0;
 	
+	public static int tam = 8;
+	public static int numeros[] = new int[tam];
+	private int ini;
+	private int fin;
 	
-	public Principal(int id) {
-		this.id=id;
+	public Principal(int ini, int fin) {
+		this.ini = ini;
+		this.fin = fin;
 	}
 	
 	public void run() {
-				
-		for (int i = 0; i < 1000; i++) {
-			cont ++;			
+		
+		for (int i = ini; i<fin;i++) {
+			numeros[i]*=10;
 		}
+		
 	}	
 	
 }
