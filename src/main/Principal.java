@@ -2,6 +2,7 @@ package main;
 
 public class Principal extends Thread {
 	private int id;
+	public static int cont = 0;
 	
 	
 	public Principal(int id) {
@@ -9,14 +10,10 @@ public class Principal extends Thread {
 	}
 	
 	public void run() {
-		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				
+		for (int i = 0; i < 1000; i++) {
+			cont ++;			
 		}
-		System.out.println("Soy el hilo: "+ id);
 	}	
 	
 }
