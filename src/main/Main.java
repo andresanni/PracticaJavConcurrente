@@ -8,14 +8,20 @@ public class Main {
 		
 		for (int i= 0; i<vec.length; i++) {
 			vec[i] = new Principal(i+1);
-		}
-		
-		
-		for(int i=0; i<vec.length;i++) {
 			vec[i].start();
 		}
 		
-		System.out.println("Soy el hilo principal");
+		try {
+			for(int i =0; i<vec.length;i++) {
+				vec[i].join();
+			}
+		}
+		catch(Exception ex) {
+			
+		}
+		
+		// Siempre se va a ejecutar al final
+		System.out.println("Soy el hilo principal"); 
 
 	}
 
